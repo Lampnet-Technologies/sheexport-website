@@ -1,0 +1,92 @@
+/*
+ * Navbar.module.css
+ * Styles for the sticky navigation bar.
+ * Background: var(--color-cream) — matches the design spec.
+ */
+
+/* ── Outer shell ────────────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-cream);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Inner flex row ─────────────────────────────────────────── */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: var(--space-lg);
+}
+
+/* ── Logo ───────────────────────────────────────────────────── */
+.logoLink {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  object-fit: contain;
+  height: 38px;
+  width: auto;
+}
+
+/* ── Nav list ───────────────────────────────────────────────── */
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.navLink {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--color-red);
+}
+
+/* ── Register button ────────────────────────────────────────── */
+.registerBtn {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  padding: 0.55rem 1.25rem;
+  letter-spacing: 0.06em;
+}
+
+/* ── Responsive: hide nav text, keep logo + button ─────────── */
+@media (max-width: 900px) {
+  .navList {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    height: 56px;
+  }
+
+  .registerBtn {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.9rem;
+  }
+}

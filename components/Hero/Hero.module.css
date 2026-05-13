@@ -1,0 +1,110 @@
+/*
+ * Hero.module.css
+ * Styles for the hero banner section.
+ * Background: var(--color-yellow) — #F6BD50
+ */
+
+/* ── Section shell ──────────────────────────────────────────── */
+.hero {
+  background-color: var(--color-yellow);
+  padding-block: var(--space-3xl) var(--space-4xl);
+}
+
+/* ── Centred content column ─────────────────────────────────── */
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+/* ── Top partner logos ──────────────────────────────────────── */
+.topLogos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-sm);
+}
+
+.topLogo {
+  object-fit: contain;
+  height: 40px;
+  width: auto;
+}
+
+/* ── "INVITES YOU TO" label ─────────────────────────────────── */
+.invites {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+/* ── Main heading ───────────────────────────────────────────── */
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.1;
+  margin-block: var(--space-xs);
+}
+
+/* ── "THEME" badge ──────────────────────────────────────────── */
+.themeBadge {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 1.2rem;
+  border-radius: var(--radius-sm);
+  margin-block: var(--space-xs);
+}
+
+/* ── Tagline ────────────────────────────────────────────────── */
+.tagline {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+  max-width: 640px;
+  margin-block: var(--space-sm);
+}
+
+/* ── CTA button group ───────────────────────────────────────── */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+.ctaBtn {
+  min-width: 170px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaBtn {
+    width: 100%;
+  }
+}

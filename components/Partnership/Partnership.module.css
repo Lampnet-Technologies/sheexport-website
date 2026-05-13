@@ -1,0 +1,56 @@
+/*
+ * Partnership.module.css
+ * Styles for the "Join Our Mission" partnership / sponsor section.
+ * Background: var(--color-yellow) #F6BD50
+ */
+
+/* ── Section shell ──────────────────────────────────────────── */
+.partnership {
+  background-color: var(--color-yellow);
+  padding-block: var(--space-4xl);
+}
+
+/* ── Centred content ────────────────────────────────────────── */
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+/* ── "PARTNER OR SPONSOR" label ─────────────────────────────── */
+.label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+/* ── Main heading ───────────────────────────────────────────── */
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.15;
+}
+
+/* ── Body text ──────────────────────────────────────────────── */
+.body {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  line-height: 1.75;
+  max-width: 580px;
+}
+
+/* ── CTA button ─────────────────────────────────────────────── */
+.ctaBtn {
+  margin-top: var(--space-sm);
+  min-width: 180px;
+}

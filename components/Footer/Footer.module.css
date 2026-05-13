@@ -1,0 +1,61 @@
+/*
+ * Footer.module.css
+ * Styles for the page footer.
+ * Background: var(--color-white) with top border separator.
+ */
+
+/* ── Footer shell ───────────────────────────────────────────── */
+.footer {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-xl);
+}
+
+/* ── Inner column ───────────────────────────────────────────── */
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+/* ── Link list ──────────────────────────────────────────────── */
+.linkList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-md) var(--space-xl);
+}
+
+/* ── Individual footer link ─────────────────────────────────── */
+.link {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-mid);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--color-red);
+}
+
+/* ── Copyright text ─────────────────────────────────────────── */
+.copyright {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  max-width: 520px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .linkList {
+    gap: var(--space-sm) var(--space-md);
+  }
+}

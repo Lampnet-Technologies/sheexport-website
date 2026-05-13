@@ -1,0 +1,120 @@
+/*
+ * About.module.css
+ * Styles for the "About The Program" section.
+ * Background: var(--color-cream) #FFF8F4
+ */
+
+/* ── Section shell ──────────────────────────────────────────── */
+.about {
+  background-color: var(--color-cream);
+  padding-block: var(--space-4xl);
+}
+
+/* ── Two-column grid ────────────────────────────────────────── */
+.inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+/* ── Left: text column ──────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 580px;
+}
+
+/* ── Section heading — Playfair Display ─────────────────────── */
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #AB0029;
+  line-height: 1.2;
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Body paragraphs ────────────────────────────────────────── */
+.body {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-text-mid);
+  line-height: 1.75;
+}
+
+/* ── Key metrics block ──────────────────────────────────────── */
+.metrics {
+  margin-top: var(--space-sm);
+}
+
+.metricsLabel {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #AB0029;
+  margin-bottom: var(--space-sm);
+}
+
+.metricsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.metricsItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-text-mid);
+}
+
+.metricsIcon {
+  flex-shrink: 0;
+}
+
+/* ── Right: image column ────────────────────────────────────── */
+.imageWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 420px;
+  height: 520px;
+  object-fit: cover;
+  box-shadow: var(--shadow-card);
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+  border-radius: 5%;
+}
+
+/* ── Responsive: stack on mobile ────────────────────────────── */
+@media (max-width: 860px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrap {
+    order: -1; /* image appears above text on mobile */
+  }
+
+  .image {
+    width: 260px;
+    height: 260px;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+}

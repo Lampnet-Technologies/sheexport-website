@@ -1,0 +1,143 @@
+/*
+ * LegalLayout.module.css
+ * Shared styles for Privacy Policy, Terms of Service, and FAQ pages.
+ *
+ * Colour palette follows the landing-page design tokens exactly:
+ *   Cream  #FFF8F4  — top bar
+ *   Yellow #F6BD50  — hero strip
+ *   White  #FFFFFF  — content area
+ *   Red    #AB0029  — accents, headings
+ */
+
+/* ── Full-page column ───────────────────────────────────────── */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-white);
+}
+
+/* ── Top bar ────────────────────────────────────────────────── */
+.topBar {
+  background-color: var(--color-cream);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.topBarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  object-fit: contain;
+  height: 38px;
+  width: auto;
+}
+
+/* Back link */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-red);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.backLink:hover {
+  opacity: 0.75;
+}
+
+/* ── Yellow hero strip ──────────────────────────────────────── */
+.hero {
+  background-color: var(--color-yellow);
+  padding-block: var(--space-3xl);
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.15;
+}
+
+.lastUpdated {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-mid);
+  margin-top: var(--space-sm);
+  font-style: italic;
+}
+
+/* ── Main content ───────────────────────────────────────────── */
+.main {
+  flex: 1; /* push footer to bottom */
+  background-color: var(--color-white);
+  padding-block: var(--space-4xl);
+}
+
+/* Narrow readable column */
+.contentWrap {
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.footer {
+  background-color: var(--color-cream);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-xl);
+}
+
+.footerInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.footerText {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
+.footerNav {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.footerLink {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-mid);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--color-red);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .footerInner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
