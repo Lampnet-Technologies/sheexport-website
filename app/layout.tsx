@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   description:
     'A catalyst for sustainable economic growth — empowering 10,000 women entrepreneurs in Lagos State through technical assistance, digital training, and market-access programmes.',
   keywords: ['SheExports', 'women entrepreneurs', 'Lagos', 'export', 'trade', 'MABA', 'LSETF'],
+  icons: {
+    icon: '/images/logo.png',
+    shortcut: '/images/logo.png',
+    apple: '/images/logo.png',
+  },
 };
 
 /* ── Root Layout ────────────────────────────────────────────── */
