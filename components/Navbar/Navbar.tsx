@@ -13,7 +13,8 @@
 'use client'; // needed for smooth-scroll click handler
 
 import Image from 'next/image';
-import Link  from 'next/link';
+import Link from 'next/link';
+import { useState } from 'react';
 import styles from './Navbar.module.css';
 
 /* ── Google Form URLs — replace with actual links ──────────── */
@@ -21,15 +22,17 @@ const REGISTER_URL = 'https://forms.gle/HoAnsNEDqDVDZyiw9'; // TODO: replace wit
 
 /* ── Navigation links — href matches section id ────────────── */
 const NAV_LINKS = [
-  { label: 'About',                   href: '#about'    },
-  { label: 'Training',                href: '#training' },
+  { label: 'About', href: '#about' },
+  { label: 'Training', href: '#training' },
   { label: 'Implementation Partners', href: '#partners' },
-  { label: 'Partner/Sponsor',         href: '#partner-sponsor' },
-  { label: 'Event',                   href: '#event'    },
-  { label: 'Contact Us',              href: 'tel:+2340000000000' }, // replaced in Footer, kept for nav
+  { label: 'Partner/Sponsor', href: '#partner-sponsor' },
+  { label: 'Event', href: '#event' },
+  { label: 'Contact Us', href: 'tel:+2340000000000' }, // replaced in Footer, kept for nav
 ];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   /**
    * Smooth-scroll to the target section when a nav link is clicked.
    * Uses native browser scroll behaviour enabled in globals.css via html { scroll-behavior: smooth }.
@@ -44,6 +47,10 @@ export default function Navbar() {
       if (target) {
         target.scrollIntoView({ behavior: 'smooth' });
       }
+    }
+
+    if (menuOpen) {
+      setMenuOpen(false);
     }
   };
 
@@ -88,6 +95,36 @@ export default function Navbar() {
         >
           Register Now
         </a>
+
+        {/*  Mobile menu toggle button (hamburger/close icon) */}
+        <button
+          type="button"
+          className={styles.mobileToggle}
+          aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span aria-hidden="true">{menuOpen ? '✕' : '☰'}</span>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        className={`${styles.mobileMenu} ${menuOpen ? styles.open : ''}`}
+      >
+        <ul className={styles.mobileNavList}>
+          {NAV_LINKS.map(({ label, href }) => (
+            <li key={label}>
+              <a
+                href={href}
+                className={styles.mobileNavLink}
+                onClick={(e) => handleNavClick(e, href)}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </header>
   );

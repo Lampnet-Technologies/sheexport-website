@@ -1,176 +1,167 @@
 /**
- * privacy-policy/page.tsx
+ * faq/page.tsx
  *
- * Privacy Policy page for SheExports 2026.
- * Route: /privacy-policy
+ * Frequently Asked Questions page for SheExports 2026.
+ * Route: /faq
  *
- * Uses LegalLayout for the shared header / hero / footer shell,
- * and LegalContent styles for all prose typography.
+ * Uses LegalLayout for the shared header / hero / footer shell
+ * and LegalContent styles for FAQ-specific typography
+ * (.faqItem, .question, .answer).
+ *
+ * Questions are grouped by topic, each group rendered as a
+ * .section block with a red Playfair Display heading.
  */
 
 import type { Metadata } from 'next';
 import LegalLayout from '@/components/LegalLayout/LegalLayout';
-import styles from '@/components/LegalLayout/LegalContent.module.css';
+import styles      from '@/components/LegalLayout/LegalContent.module.css';
 
 /* ── Page metadata ──────────────────────────────────────────── */
 export const metadata: Metadata = {
-    title: 'Privacy Policy | SheExports 2026',
-    description: 'How SheExports 2026 collects, uses, and protects your personal information.',
+  title: 'FAQ | SheExports 2026',
+  description:
+    'Answers to frequently asked questions about the SheExports 2026 Initiative — eligibility, training, events, and more.',
 };
 
+/* ── FAQ data: grouped by topic ─────────────────────────────── */
+const FAQ_GROUPS: {
+  topic: string;
+  items: { q: string; a: string }[];
+}[] = [
+  {
+    topic: 'About the Programme',
+    items: [
+      {
+        q: 'What is SheExports 2026?',
+        a: 'SheExports 2026 is a flagship initiative co-led by MABA (Made in Africa Brands Ambassador), the Lagos State Ministry of Wealth Creation and Employment, and LSETF. It is designed to empower 10,000 women entrepreneurs in Lagos State over five years (2026–2031) by equipping them with the technical skills, market access, and funding connections needed to grow export-ready businesses.',
+      },
+      {
+        q: 'Who is behind SheExports?',
+        a: 'The initiative is driven by MABA in collaboration with the Lagos State Ministry of Wealth Creation and Employment and the Lagos State Employment Trust Fund (LSETF). It is executed through a network of implementing partners spanning government agencies, development finance institutions, and private sector organisations.',
+      },
+      {
+        q: 'What are the key goals of the programme?',
+        a: 'The programme aims to (1) build export and digital trade skills among women-led businesses, (2) facilitate access to international markets for value-added Nigerian products, (3) connect participants with trade finance and funding opportunities, and (4) generate measurable economic impact over a 5-year period across Lagos State.',
+      },
+    ],
+  },
+  {
+    topic: 'Eligibility & Registration',
+    items: [
+      {
+        q: 'Who can apply to SheExports 2026?',
+        a: 'The programme is open to women entrepreneurs aged 18 and above who own or co-own a business — registered or unregistered — operating within Lagos State. Applicants at any business stage (idea, early-stage, or established) are welcome, particularly those with products or services that have export potential.',
+      },
+      {
+        q: 'Is there a fee to participate?',
+        a: 'No. The training programme and event are fully funded. There are no fees to register, attend training sessions, or participate in the sheEXports Conference 2026.',
+      },
+      {
+        q: 'How do I apply for the training?',
+        a: 'You can apply by clicking the "Apply for Training" button on this website. The application form will ask for basic information about you and your business. Shortlisted applicants will be notified via the contact details provided.',
+      },
+      {
+        q: 'How do I register to attend the sheEXports Conference 2026?',
+        a: 'Click the "Register to Attend" button on the home page to complete your event registration. The conference holds on Saturday, 27th June 2026 at the Oriental Hotel, Victoria Island, Lagos. Attendance is free but spaces are limited.',
+      },
+      {
+        q: 'Can I register to attend the conference without applying for training?',
+        a: 'Yes. The conference and the training programme are separate. You may attend the conference without enrolling in the 6-week training course, and vice versa.',
+      },
+    ],
+  },
+  {
+    topic: 'Training & Course Content',
+    items: [
+      {
+        q: 'What does the training cover?',
+        a: 'The 6-week programme covers: Generative AI for digital marketing; understanding export and international trade; B2B buyer engagement and logistics; rules of origin and trade regulations; access to funding and financial management; and investment readiness. Each week combines expert-led sessions with practical exercises.',
+      },
+      {
+        q: 'When does the training start and how long does it run?',
+        a: 'Training runs for 6 weeks from 2nd May to 20th June 2026. Sessions are structured to accommodate working entrepreneurs, with a mix of in-person workshops and online resources.',
+      },
+      {
+        q: 'Will I receive a certificate?',
+        a: 'Yes. Participants who complete at least 80% of the training modules will receive a Certificate of Completion co-issued by MABA and LSETF. The certificate recognises your training in export readiness and digital trade skills.',
+      },
+      {
+        q: 'What happens if I miss a session?',
+        a: 'We understand that entrepreneurs have demanding schedules. If you miss a session, please notify the Programme team in advance. Recorded materials and catch-up resources will be made available where possible. A minimum of 80% attendance is required for certification.',
+      },
+    ],
+  },
+  {
+    topic: 'The Event',
+    items: [
+      {
+        q: 'What is the sheEXports Conference 2026?',
+        a: 'The sheEXports Conference 2026 is the flagship event of the initiative, bringing together women entrepreneurs, policymakers, trade experts, development finance institutions, and private sector partners. It features keynote addresses, panel discussions, a product showcase, and networking sessions focused on export-led growth.',
+      },
+      {
+        q: 'Where and when is the conference?',
+        a: 'The conference holds on Saturday, 27th June 2026 at 10:00 am at the Oriental Hotel, Victoria Island, Lagos, Nigeria.',
+      },
+      {
+        q: 'Will there be an opportunity to exhibit my products?',
+        a: 'Yes. A product showcase will be available for women entrepreneurs to display export-ready goods and services. Details on applying for exhibition space will be communicated to registered participants closer to the event date.',
+      },
+    ],
+  },
+  {
+    topic: 'Market Access & Funding',
+    items: [
+      {
+        q: 'What market access opportunities are available through the programme?',
+        a: 'Participants gain access to an international marketplace platform designed to connect Nigerian value-added products and services with buyers across Africa, Europe, the Middle East, and beyond. The programme also facilitates introductions to trade missions, export platforms, and B2B buyer networks.',
+      },
+      {
+        q: 'What funding support can I access?',
+        a: 'The programme creates pathways to trade finance, working capital support, and grant opportunities through LSETF and partner development finance institutions. Funding access is competitive and subject to the eligibility criteria of individual funding programmes.',
+      },
+      {
+        q: 'Does the programme guarantee me a buyer or a loan?',
+        a: 'No. The programme facilitates connections and equips you with the skills to pursue these opportunities. However, securing a buyer contract, trade finance, or grant is subject to your business performance, the independent decisions of third-party partners, and applicable eligibility criteria.',
+      },
+    ],
+  },
+  {
+    topic: 'Partners & Sponsorship',
+    items: [
+      {
+        q: 'How can my organisation become an implementing partner?',
+        a: 'Organisations interested in becoming implementing partners — whether as technical assistance providers, market access platforms, or funding institutions — are encouraged to reach out via the "Become a Partner" form on this website. The Programme team will review your expression of interest and be in touch.',
+      },
+      {
+        q: 'How can my company sponsor SheExports 2026?',
+        a: 'Corporate sponsors play a vital role in expanding the programme\'s reach and impact. Sponsorship packages are available at different tiers, each with associated visibility and engagement benefits. Complete the "Become a Partner" form on this website and our team will share a detailed sponsorship prospectus.',
+      },
+    ],
+  },
+];
+
 /* ── Page component ─────────────────────────────────────────── */
-export default function PrivacyPolicyPage() {
-    return (
-        <LegalLayout title="Privacy Policy" lastUpdated="May 2026">
+export default function FaqPage() {
+  return (
+    <LegalLayout title="Frequently Asked Questions">
 
-            {/* ── 1. Introduction ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>1. Introduction</h2>
-                <p className={styles.body}>
-                    Welcome to the SheExports 2026 Initiative (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to
-                    protecting the personal information of every woman entrepreneur, partner, and stakeholder
-                    who engages with our programme. This Privacy Policy explains what data we collect, why
-                    we collect it, how we use it, and the rights you have over it.
-                </p>
-                <p className={styles.body}>
-                    By registering for the SheExports programme, attending our events, or using our website,
-                    you agree to the practices described in this policy.
-                </p>
+      {FAQ_GROUPS.map(({ topic, items }) => (
+        <div key={topic} className={styles.section}>
+
+          {/* Topic group heading — red Playfair Display */}
+          <h2 className={styles.sectionTitle}>{topic}</h2>
+
+          {/* Q&A items */}
+          {items.map(({ q, a }) => (
+            <div key={q} className={styles.faqItem}>
+              <p className={styles.question}>{q}</p>
+              <p className={styles.answer}>{a}</p>
             </div>
+          ))}
 
-            {/* ── 2. Information We Collect ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>2. Information We Collect</h2>
+        </div>
+      ))}
 
-                <h3 className={styles.subTitle}>Information you provide directly</h3>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>Full name and business name</li>
-                    <li className={styles.listItem}>Email address and phone number</li>
-                    <li className={styles.listItem}>Local government area and state of residence</li>
-                    <li className={styles.listItem}>Business registration details and sector</li>
-                    <li className={styles.listItem}>Training preferences and programme application responses</li>
-                    <li className={styles.listItem}>Payment or funding-related information where applicable</li>
-                </ul>
-
-                <h3 className={styles.subTitle}>Information collected automatically</h3>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>Browser type, IP address, and device information</li>
-                    <li className={styles.listItem}>Pages visited, time spent, and navigation paths on our website</li>
-                    <li className={styles.listItem}>Referral source (how you found us)</li>
-                </ul>
-            </div>
-
-            {/* ── 3. How We Use Your Information ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>3. How We Use Your Information</h2>
-                <p className={styles.body}>
-                    We use the information we collect solely to further the mission of the SheExports
-                    Initiative and to improve participant outcomes. Specifically, we use your data to:
-                </p>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>
-                        Process your registration and enrolment in training modules
-                    </li>
-                    <li className={styles.listItem}>
-                        Send programme updates, event invitations, and relevant notifications
-                    </li>
-                    <li className={styles.listItem}>
-                        Match participants with market access, funding, and mentorship opportunities
-                    </li>
-                    <li className={styles.listItem}>
-                        Measure programme impact and produce anonymised impact reports for stakeholders
-                    </li>
-                    <li className={styles.listItem}>
-                        Improve our website, training content, and participant experience
-                    </li>
-                    <li className={styles.listItem}>
-                        Comply with applicable Nigerian laws and regulatory requirements
-                    </li>
-                </ul>
-                <div className={styles.highlight}>
-                    We will <span className={styles.strong}>never</span> sell, rent, or trade your personal
-                    information to third parties for marketing purposes.
-                </div>
-            </div>
-
-            {/* ── 4. Data Sharing ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>4. Data Sharing &amp; Disclosure</h2>
-                <p className={styles.body}>
-                    We may share your information with trusted implementing partners — including MABA,
-                    LSETF, and the Lagos State Ministry of Wealth Creation and Employment — strictly for the
-                    purpose of delivering programme benefits to you. All partners are contractually bound to
-                    handle your data with the same level of care described in this policy.
-                </p>
-                <p className={styles.body}>
-                    We may also disclose information where required by Nigerian law, court order, or
-                    government authority.
-                </p>
-            </div>
-
-            {/* ── 5. Data Retention ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>5. Data Retention</h2>
-                <p className={styles.body}>
-                    We retain your personal data for as long as you are an active participant in the
-                    SheExports programme and for a period of five (5) years thereafter to support
-                    longitudinal impact assessment. You may request deletion of your data at any time,
-                    subject to legal obligations that require us to retain certain records.
-                </p>
-            </div>
-
-            {/* ── 6. Data Security ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>6. Data Security</h2>
-                <p className={styles.body}>
-                    We implement appropriate technical and organisational measures to protect your personal
-                    information against unauthorised access, alteration, disclosure, or destruction. These
-                    include access controls, encrypted storage, and regular security reviews.
-                </p>
-                <p className={styles.body}>
-                    No method of transmission over the internet or electronic storage is completely secure.
-                    While we strive to protect your information, we cannot guarantee absolute security.
-                </p>
-            </div>
-
-            {/* ── 7. Your Rights ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>7. Your Rights</h2>
-                <p className={styles.body}>
-                    Under the Nigeria Data Protection Regulation (NDPR) and applicable law, you have the
-                    right to:
-                </p>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>Access a copy of the personal data we hold about you</li>
-                    <li className={styles.listItem}>Request correction of inaccurate or incomplete data</li>
-                    <li className={styles.listItem}>Request deletion of your personal data</li>
-                    <li className={styles.listItem}>Object to or restrict certain types of processing</li>
-                    <li className={styles.listItem}>
-                        Withdraw consent at any time where processing is based on consent
-                    </li>
-                </ul>
-            </div>
-
-            {/* ── 8. Cookies ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>8. Cookies &amp; Tracking</h2>
-                <p className={styles.body}>
-                    Our website may use cookies and similar tracking technologies to enhance your browsing
-                    experience and gather analytical data. You can control cookie preferences through your
-                    browser settings. Disabling cookies may affect some website functionality.
-                </p>
-            </div>
-
-            {/* ── 9. Changes to This Policy ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>9. Changes to This Policy</h2>
-                <p className={styles.body}>
-                    We may update this Privacy Policy from time to time to reflect changes in our practices
-                    or applicable law. When we make material changes, we will update the &quot;Last updated&quot; date
-                    at the top of this page. We encourage you to review this policy periodically.
-                </p>
-            </div>
-
-        </LegalLayout>
-    );
+    </LegalLayout>
+  );
 }

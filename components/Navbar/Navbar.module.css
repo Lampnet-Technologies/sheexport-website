@@ -74,9 +74,102 @@
 }
 
 /* ── Responsive: hide nav text, keep logo + button ─────────── */
+.mobileToggle {
+  display: none;
+  background: transparent;
+  border: 2px solid transparent;
+  color: var(--color-text-dark);
+  font-size: 1.35rem;
+  line-height: 1;
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.mobileToggle:hover,
+.mobileToggle:focus-visible {
+  background-color: rgba(171, 0, 41, 0.08);
+  color: var(--color-red);
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(255, 248, 244, 0.94);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(171, 0, 41, 0.14);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+  transition: max-height 0.25s ease, opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 90;
+}
+
+.mobileMenu.open {
+  max-height: 320px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNavList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem var(--space-md) var(--space-lg);
+}
+
+.mobileNavLink {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:focus-visible {
+  background: rgba(171, 0, 41, 0.08);
+  color: var(--color-red);
+}
+
 @media (max-width: 900px) {
   .navList {
     display: none;
+  }
+
+  .mobileToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inner {
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 680px) {
+  .registerBtn {
+    font-size: 0.72rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .mobileNavLink {
+    font-size: 0.88rem;
+    padding: 0.8rem 0.95rem;
   }
 }
 
@@ -87,6 +180,6 @@
 
   .registerBtn {
     font-size: 0.7rem;
-    padding: 0.45rem 0.9rem;
+    padding: 0.4rem 0.75rem;
   }
 }

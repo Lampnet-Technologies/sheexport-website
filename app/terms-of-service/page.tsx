@@ -1,176 +1,213 @@
 /**
- * privacy-policy/page.tsx
+ * terms-of-service/page.tsx
  *
- * Privacy Policy page for SheExports 2026.
- * Route: /privacy-policy
+ * Terms of Service page for SheExports 2026.
+ * Route: /terms-of-service
  *
- * Uses LegalLayout for the shared header / hero / footer shell,
+ * Uses LegalLayout for the shared header / hero / footer shell
  * and LegalContent styles for all prose typography.
  */
 
 import type { Metadata } from 'next';
 import LegalLayout from '@/components/LegalLayout/LegalLayout';
-import styles from '@/components/LegalLayout/LegalContent.module.css';
+import styles      from '@/components/LegalLayout/LegalContent.module.css';
 
 /* ── Page metadata ──────────────────────────────────────────── */
 export const metadata: Metadata = {
-    title: 'Privacy Policy | SheExports 2026',
-    description: 'How SheExports 2026 collects, uses, and protects your personal information.',
+  title: 'Terms of Service | SheExports 2026',
+  description:
+    'Read the terms and conditions governing participation in the SheExports 2026 Initiative.',
 };
 
 /* ── Page component ─────────────────────────────────────────── */
-export default function PrivacyPolicyPage() {
-    return (
-        <LegalLayout title="Privacy Policy" lastUpdated="May 2026">
+export default function TermsOfServicePage() {
+  return (
+    <LegalLayout title="Terms of Service" lastUpdated="May 2026">
 
-            {/* ── 1. Introduction ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>1. Introduction</h2>
-                <p className={styles.body}>
-                    Welcome to the SheExports 2026 Initiative (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to
-                    protecting the personal information of every woman entrepreneur, partner, and stakeholder
-                    who engages with our programme. This Privacy Policy explains what data we collect, why
-                    we collect it, how we use it, and the rights you have over it.
-                </p>
-                <p className={styles.body}>
-                    By registering for the SheExports programme, attending our events, or using our website,
-                    you agree to the practices described in this policy.
-                </p>
-            </div>
+      {/* ── 1. Acceptance of Terms ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>1. Acceptance of Terms</h2>
+        <p className={styles.body}>
+          By registering for, attending, or participating in any component of the SheExports
+          2026 Initiative (&ldquo;the Programme&rdquo;), you agree to be bound by these Terms of Service
+          (&ldquo;Terms&rdquo;). The Programme is organised by MABA (Made in Africa Brands Ambassador) in
+          collaboration with the Lagos State Ministry of Wealth Creation and Employment (LSETF).
+        </p>
+        <p className={styles.body}>
+          If you do not agree to these Terms, please do not register for or participate in the
+          Programme. We reserve the right to update these Terms at any time; continued
+          participation constitutes acceptance of any revised Terms.
+        </p>
+      </div>
 
-            {/* ── 2. Information We Collect ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>2. Information We Collect</h2>
+      {/* ── 2. Programme Eligibility ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>2. Programme Eligibility</h2>
+        <p className={styles.body}>
+          The SheExports 2026 Programme is open to women entrepreneurs based in Lagos State,
+          Nigeria. To be eligible, applicants must:
+        </p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            Be a woman who owns or co-owns a registered or unregistered business operating
+            within Lagos State
+          </li>
+          <li className={styles.listItem}>
+            Be at least 18 years of age at the time of registration
+          </li>
+          <li className={styles.listItem}>
+            Provide accurate and truthful information during the application process
+          </li>
+          <li className={styles.listItem}>
+            Be available to attend the full 6-week training programme (2 May – 20 June 2026)
+          </li>
+          <li className={styles.listItem}>
+            Agree to participate in programme surveys and impact assessments as requested
+          </li>
+        </ul>
+        <div className={styles.highlight}>
+          Submission of false or misleading information will result in immediate disqualification
+          and may affect future eligibility for Lagos State economic empowerment programmes.
+        </div>
+      </div>
 
-                <h3 className={styles.subTitle}>Information you provide directly</h3>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>Full name and business name</li>
-                    <li className={styles.listItem}>Email address and phone number</li>
-                    <li className={styles.listItem}>Local government area and state of residence</li>
-                    <li className={styles.listItem}>Business registration details and sector</li>
-                    <li className={styles.listItem}>Training preferences and programme application responses</li>
-                    <li className={styles.listItem}>Payment or funding-related information where applicable</li>
-                </ul>
+      {/* ── 3. Training & Programme Conduct ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>3. Training &amp; Programme Conduct</h2>
 
-                <h3 className={styles.subTitle}>Information collected automatically</h3>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>Browser type, IP address, and device information</li>
-                    <li className={styles.listItem}>Pages visited, time spent, and navigation paths on our website</li>
-                    <li className={styles.listItem}>Referral source (how you found us)</li>
-                </ul>
-            </div>
+        <h3 className={styles.subTitle}>Attendance</h3>
+        <p className={styles.body}>
+          Participants are expected to attend all scheduled training sessions. A minimum
+          attendance rate of 80% is required to receive a Certificate of Completion. Persistent
+          absence without prior notice may result in removal from the Programme.
+        </p>
 
-            {/* ── 3. How We Use Your Information ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>3. How We Use Your Information</h2>
-                <p className={styles.body}>
-                    We use the information we collect solely to further the mission of the SheExports
-                    Initiative and to improve participant outcomes. Specifically, we use your data to:
-                </p>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>
-                        Process your registration and enrolment in training modules
-                    </li>
-                    <li className={styles.listItem}>
-                        Send programme updates, event invitations, and relevant notifications
-                    </li>
-                    <li className={styles.listItem}>
-                        Match participants with market access, funding, and mentorship opportunities
-                    </li>
-                    <li className={styles.listItem}>
-                        Measure programme impact and produce anonymised impact reports for stakeholders
-                    </li>
-                    <li className={styles.listItem}>
-                        Improve our website, training content, and participant experience
-                    </li>
-                    <li className={styles.listItem}>
-                        Comply with applicable Nigerian laws and regulatory requirements
-                    </li>
-                </ul>
-                <div className={styles.highlight}>
-                    We will <span className={styles.strong}>never</span> sell, rent, or trade your personal
-                    information to third parties for marketing purposes.
-                </div>
-            </div>
+        <h3 className={styles.subTitle}>Code of Conduct</h3>
+        <p className={styles.body}>
+          All participants are expected to engage respectfully and professionally with fellow
+          participants, trainers, and Programme staff. The following conduct is strictly
+          prohibited:
+        </p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            Harassment, discrimination, or intimidation of any kind based on ethnicity, religion,
+            age, disability, or any other characteristic
+          </li>
+          <li className={styles.listItem}>
+            Disruption of training sessions or Programme events
+          </li>
+          <li className={styles.listItem}>
+            Misrepresentation of Programme affiliation or benefits for personal gain
+          </li>
+          <li className={styles.listItem}>
+            Sharing confidential Programme materials without written authorisation
+          </li>
+        </ul>
+        <p className={styles.body}>
+          Violations may result in immediate removal from the Programme without refund of any
+          fees paid.
+        </p>
+      </div>
 
-            {/* ── 4. Data Sharing ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>4. Data Sharing &amp; Disclosure</h2>
-                <p className={styles.body}>
-                    We may share your information with trusted implementing partners — including MABA,
-                    LSETF, and the Lagos State Ministry of Wealth Creation and Employment — strictly for the
-                    purpose of delivering programme benefits to you. All partners are contractually bound to
-                    handle your data with the same level of care described in this policy.
-                </p>
-                <p className={styles.body}>
-                    We may also disclose information where required by Nigerian law, court order, or
-                    government authority.
-                </p>
-            </div>
+      {/* ── 4. Intellectual Property ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>4. Intellectual Property</h2>
+        <p className={styles.body}>
+          All training materials, presentations, toolkits, videos, and other content provided
+          through the SheExports Programme (&ldquo;Programme Materials&rdquo;) are the intellectual property
+          of MABA, LSETF, and/or their content partners. Participants are granted a limited,
+          non-exclusive, non-transferable licence to use Programme Materials solely for their
+          personal business development.
+        </p>
+        <p className={styles.body}>
+          Participants may not reproduce, distribute, sell, or publicly display Programme
+          Materials without prior written consent from the Programme organisers.
+        </p>
+      </div>
 
-            {/* ── 5. Data Retention ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>5. Data Retention</h2>
-                <p className={styles.body}>
-                    We retain your personal data for as long as you are an active participant in the
-                    SheExports programme and for a period of five (5) years thereafter to support
-                    longitudinal impact assessment. You may request deletion of your data at any time,
-                    subject to legal obligations that require us to retain certain records.
-                </p>
-            </div>
+      {/* ── 5. Market Access & Funding Opportunities ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>5. Market Access &amp; Funding Opportunities</h2>
+        <p className={styles.body}>
+          The Programme facilitates introductions to market access platforms and funding
+          opportunities. However, we do not guarantee that any participant will secure a
+          specific export contract, funding, or business outcome. Selection for funding or
+          market access programmes is subject to the independent criteria of third-party
+          platforms and funders.
+        </p>
+        <p className={styles.body}>
+          The Programme organisers are not responsible for the terms, conditions, or outcomes
+          of any agreement entered into between a participant and a third-party platform,
+          funder, or buyer.
+        </p>
+      </div>
 
-            {/* ── 6. Data Security ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>6. Data Security</h2>
-                <p className={styles.body}>
-                    We implement appropriate technical and organisational measures to protect your personal
-                    information against unauthorised access, alteration, disclosure, or destruction. These
-                    include access controls, encrypted storage, and regular security reviews.
-                </p>
-                <p className={styles.body}>
-                    No method of transmission over the internet or electronic storage is completely secure.
-                    While we strive to protect your information, we cannot guarantee absolute security.
-                </p>
-            </div>
+      {/* ── 6. Limitation of Liability ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>6. Limitation of Liability</h2>
+        <p className={styles.body}>
+          To the fullest extent permitted by Nigerian law, MABA, LSETF, and the Lagos State
+          Ministry of Wealth Creation and Employment shall not be liable for any indirect,
+          incidental, special, or consequential loss or damage arising from:
+        </p>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>Participation in or withdrawal from the Programme</li>
+          <li className={styles.listItem}>
+            Reliance on training content, market information, or business advice provided
+            through the Programme
+          </li>
+          <li className={styles.listItem}>
+            Technical failures affecting access to online Programme resources
+          </li>
+          <li className={styles.listItem}>
+            Actions of third-party partners, buyers, or funders introduced through the Programme
+          </li>
+        </ul>
+      </div>
 
-            {/* ── 7. Your Rights ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>7. Your Rights</h2>
-                <p className={styles.body}>
-                    Under the Nigeria Data Protection Regulation (NDPR) and applicable law, you have the
-                    right to:
-                </p>
-                <ul className={styles.list}>
-                    <li className={styles.listItem}>Access a copy of the personal data we hold about you</li>
-                    <li className={styles.listItem}>Request correction of inaccurate or incomplete data</li>
-                    <li className={styles.listItem}>Request deletion of your personal data</li>
-                    <li className={styles.listItem}>Object to or restrict certain types of processing</li>
-                    <li className={styles.listItem}>
-                        Withdraw consent at any time where processing is based on consent
-                    </li>
-                </ul>
-            </div>
+      {/* ── 7. Photography & Media ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>7. Photography &amp; Media Consent</h2>
+        <p className={styles.body}>
+          By participating in Programme events, you grant MABA and LSETF a royalty-free,
+          non-exclusive licence to use photographs, videos, and audio recordings taken at
+          Programme events for promotional, reporting, and impact documentation purposes.
+          If you do not consent to being photographed or recorded, please notify the Programme
+          team in writing before the event.
+        </p>
+      </div>
 
-            {/* ── 8. Cookies ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>8. Cookies &amp; Tracking</h2>
-                <p className={styles.body}>
-                    Our website may use cookies and similar tracking technologies to enhance your browsing
-                    experience and gather analytical data. You can control cookie preferences through your
-                    browser settings. Disabling cookies may affect some website functionality.
-                </p>
-            </div>
+      {/* ── 8. Termination ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>8. Termination &amp; Withdrawal</h2>
+        <p className={styles.body}>
+          You may withdraw from the Programme at any time by notifying the Programme
+          team. The Programme organisers reserve the right to terminate a participant&apos;s
+          enrolment for violation of these Terms, provision of false information, or any conduct
+          deemed detrimental to the Programme or its participants.
+        </p>
+      </div>
 
-            {/* ── 9. Changes to This Policy ── */}
-            <div className={styles.section}>
-                <h2 className={styles.sectionTitle}>9. Changes to This Policy</h2>
-                <p className={styles.body}>
-                    We may update this Privacy Policy from time to time to reflect changes in our practices
-                    or applicable law. When we make material changes, we will update the &quot;Last updated&quot; date
-                    at the top of this page. We encourage you to review this policy periodically.
-                </p>
-            </div>
+      {/* ── 9. Governing Law ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>9. Governing Law</h2>
+        <p className={styles.body}>
+          These Terms shall be governed by and construed in accordance with the laws of the
+          Federal Republic of Nigeria. Any dispute arising from these Terms shall be subject to
+          the exclusive jurisdiction of the courts of Lagos State, Nigeria.
+        </p>
+      </div>
 
-        </LegalLayout>
-    );
+      {/* ── 10. Changes to Terms ── */}
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>10. Changes to These Terms</h2>
+        <p className={styles.body}>
+          We reserve the right to modify these Terms at any time. Changes will be communicated
+          to registered participants via the contact details provided at registration. Continued
+          participation after notification of changes constitutes acceptance of the revised Terms.
+        </p>
+      </div>
+
+    </LegalLayout>
+  );
 }
