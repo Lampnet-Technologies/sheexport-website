@@ -20,12 +20,12 @@ import styles from './Contact.module.css';
 const CONTACTS = [
     {
         role: 'For Partnership',
-        email: 'Partnership@thefmcgfestival.com',
+        email: 'Partnership@sheexports.africa',
         phone: '+2347025001143',
     },
     {
         role: 'For Sponsorship',
-        email: 'Sponsorship@thefmcgfestival.com',
+        email: 'Sponsorship@sheexports.africa',
         phone: '+2347025001143',
     },
 ];

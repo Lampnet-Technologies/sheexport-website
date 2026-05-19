@@ -35,7 +35,7 @@ export default function About() {
 
           {/* Programme description */}
           <p className={styles.body}>
-            In 2026, The sheEXports Initiative was launched and unveiled by {' '}<strong>the Made in Africa Brands Ambassador (MABA), the Lagos State Ministry of Wealth Creation and Employment (MWC&E), and the Lagos State Employment Trust Fund (LSETF)</strong>{' '} to advance the participation of women led businesses in trade and export.
+            Born from a strategic partnership between {' '}<strong>the Made in Africa Brands Ambassador (MABA), the Lagos State Ministry of Wealth Creation and Employment (MWC&E), and the Lagos State Employment Trust Fund (LSETF),</strong>{' '} this initiative is designed to dismantle barriers for women-led enterprises. By providing the tools, training, and networks necessary to scale, we are actively positioning Lagosian businesses to thrive in the global export marketplace.
           </p>
 
           {/* Key metrics */}

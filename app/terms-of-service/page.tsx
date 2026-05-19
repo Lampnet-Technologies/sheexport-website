@@ -10,7 +10,7 @@
 
 import type { Metadata } from 'next';
 import LegalLayout from '@/components/LegalLayout/LegalLayout';
-import styles      from '@/components/LegalLayout/LegalContent.module.css';
+import styles from '@/components/LegalLayout/LegalContent.module.css';
 
 /* ── Page metadata ──────────────────────────────────────────── */
 export const metadata: Metadata = {
@@ -64,8 +64,8 @@ export default function TermsOfServicePage() {
           <li className={styles.listItem}>
             Agree to participate in programme surveys and impact assessments as requested
           </li>
-           <li className={styles.listItem}>
-            Agree to attent all sheExport Events/Conferences
+          <li className={styles.listItem}>
+            Agree to attend all sheExport Events/Conferences
           </li>
         </ul>
         <div className={styles.highlight}>
