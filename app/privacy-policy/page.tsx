@@ -97,8 +97,8 @@ export default function PrivacyPolicyPage() {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>4. Data Sharing &amp; Disclosure</h2>
         <p className={styles.body}>
-          We may share your information with trusted implementing partners — including MABA,
-          LSETF, and the Lagos State Ministry of Wealth Creation and Employment — strictly for the
+          We may share your information with trusted implementing partners — including Made in Africa Brands Ambassador (MABA),
+          Lagos State Employment Trust Fund (LSETF), and the Lagos State Ministry of Wealth Creation and Employment (MWC&E) — strictly for the
           purpose of delivering programme benefits to you. All partners are contractually bound to
           handle your data with the same level of care described in this policy.
         </p>

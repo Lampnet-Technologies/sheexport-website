@@ -43,7 +43,7 @@ export default function ImplementingPartners() {
 
         {/* ── Partners logo grid ── */}
         <div className={styles.grid}>
-          {PARTNERS.map(({ src, alt, label }) => (
+          {PARTNERS.map(({ src, alt, }) => (
             <div key={src} className={styles.logoWrap}>
               <Image
                 src={src}
@@ -52,7 +52,7 @@ export default function ImplementingPartners() {
                 height={60}
                 className={styles.logo}
               />
-              <p className={styles.logoLabel}>{label}</p>
+              {/* <p className={styles.logoLabel}>{label}</p> */}
             </div>
           ))}
         </div>

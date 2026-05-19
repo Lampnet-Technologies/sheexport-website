@@ -27,7 +27,7 @@ const NAV_LINKS = [
   { label: 'Implementation Partners', href: '#partners' },
   { label: 'Partner/Sponsor', href: '#partner-sponsor' },
   { label: 'Event', href: '#event' },
-  { label: 'Contact Us', href: 'tel:+2340000000000' }, // replaced in Footer, kept for nav
+  { label: 'Contact Us', href: '#contact' }, // replaced in Footer, kept for nav
 ];
 
 export default function Navbar() {
@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <Link href="/" className={styles.logoLink} aria-label="SheExports home">
           <Image
-            src="/images/logo.png"
+            src="/images/logo2.png"
             alt="SheExports logo"
             width={80}
             height={40}
@@ -87,14 +87,14 @@ export default function Navbar() {
         </nav>
 
         {/* ── Register CTA ── */}
-        <a
+        <Link
           href={REGISTER_URL}
           target="_blank"
           rel="noopener noreferrer"
           className={`btn btn-red ${styles.registerBtn}`}
         >
           Register Now
-        </a>
+        </Link>
 
         {/*  Mobile menu toggle button (hamburger/close icon) */}
         <button

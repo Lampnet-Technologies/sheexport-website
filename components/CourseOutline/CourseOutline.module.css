@@ -77,10 +77,14 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-sm);
   white-space: nowrap;
   min-width: 70px;
   text-align: center;
+  -webkit-border-radius: var(--radius-vs);
+  -moz-border-radius: var(--radius-vs);
+  -ms-border-radius: var(--radius-vs);
+  -o-border-radius: var(--radius-vs);
+  border-radius: var(--radius-vs);
 }
 
 /* ── Week title + description ───────────────────────────────── */
@@ -100,7 +104,7 @@
 
 .weekDesc {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 1.02rem;
   color: var(--color-text-mid);
   line-height: 1.6;
 }
@@ -110,6 +114,7 @@
   margin-top: var(--space-3xl);
   display: flex;
   justify-content: center;
+  border-radius: var(--radius-vs);
 }
 
 /* ── Responsive ─────────────────────────────────────────────── */

@@ -53,7 +53,7 @@ export default function Scope() {
         <div className={styles.header}>
           <h2 className={styles.heading}>Scope of Work &amp; Project Components</h2>
           <p className={styles.subtitle}>
-            The sheEXports will empower 10,000 women entrepreneurs in Lagos State by
+            The sheEXports will empower +1,000 women entrepreneurs in Lagos State by
             providing comprehensive support structures.
           </p>
         </div>

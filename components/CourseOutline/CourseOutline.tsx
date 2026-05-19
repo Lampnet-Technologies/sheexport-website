@@ -42,7 +42,7 @@ const WEEKS = [
     week: 4,
     title: 'Rules of origin (RoO) & Regulations',
     description:
-      'Tax/customs/customs: Technical regulations and practical application of free trade agreements (FTAs).',
+      'Tax/Customs/Customs: Technical regulations and practical application of free trade agreements (FTAs).',
   },
   {
     week: 5,
@@ -68,7 +68,7 @@ export default function CourseOutline() {
         <div className={styles.header}>
           <h2 className={styles.heading}>Course Outline</h2>
           <p className={styles.meta}>
-            Duration: 6 Weeks &nbsp;|&nbsp; Start date: May 2nd – June 20th 2026.
+            Duration: 6 Weeks {/* &nbsp;|&nbsp; Start date: May 2nd – June 20th 2026. */}
           </p>
         </div>
 

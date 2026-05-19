@@ -2,27 +2,14 @@
  * Event.module.css
  * Styles for "The Event" section.
  *
- * Section bg:   var(--color-peach)  #FFF1E6
- * Outer card:   dashed blue border (#4A90D9 approx), white bg, rounded
- * Side cards:   white bg, subtle border, rounded
- * Headings:     var(--color-red) + Playfair Display
  */
 
 /* ── Section shell ──────────────────────────────────────────── */
 .event {
   background-color: var(--color-peach);
   padding-block: var(--space-4xl);
+  border-bottom: 2px solid var(--color-border);
 }
-
-/* ── Outer dashed-border card ───────────────────────────────── */
-/* .outerCard {
-  border-radius: var(--radius-xl);
-  background-color: var(--color-peach);
-  padding: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-} */
 
 /* ── "The Event" section heading ────────────────────────────── */
 .sectionHeading {
@@ -33,72 +20,6 @@
   color: var(--color-red);
   text-align: center;
   margin-bottom: var(--space-3xl);
-}
-
-/* ── Three-column layout ────────────────────────────────────── */
-.columns {
-  display: grid;
-  /* All columns equal width */
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  gap: var(--space-sm);
-}
-
-/* ── Shared white side-card ─────────────────────────────────── */
-.sideCard {
-  background-color: var(--color-cream);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  /* make each side card fill the full column height */
-  height: 100%;
-  width: 100%;
-  align-self: stretch;
-}
-
-/* ── Card section heading (red, Playfair) ───────────────────── */
-.cardHeading {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--color-red);
-  margin-bottom: var(--space-xs);
-}
-
-/* ── Detail row: icon + label/value ────────────────────────── */
-.detailRow {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-sm);
-}
-
-/* Icon colour: inherit dark text (matches screenshot grey-ish icons) */
-.icon {
-  flex-shrink: 0;
-  color: var(--color-red);
-  margin-top: 2px;
-}
-
-/* Small all-caps label above the value (DATE / TIME / VENUE) */
-.detailLabel {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-light);
-  margin-bottom: 2px;
-}
-
-.detailValue {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--color-text-dark);
-  line-height: 1.4;
 }
 
 /* ── Centre flyer column ────────────────────────────────────── */
@@ -115,7 +36,7 @@
 
 .flyer {
   width: 100%;
-  max-width: 260px;
+  max-width: 1460px;
   height: auto;
   object-fit: cover;
   border-radius: var(--radius-md);
@@ -124,72 +45,9 @@
   margin-top: -20px;
 }
 
-/* ── Contact block (name + phone pair) ──────────────────────── */
-.contactBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.contactName {
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--color-text-dark);
-}
-
-.contactPhone {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: var(--color-text-mid);
-}
-
-/* ── Horizontal rule between contacts and links ─────────────── */
-.divider {
-  border: none;
-  border-top: 1px solid var(--color-border);
-  margin-block: var(--space-xs);
-}
-
-/* ── Email / website link rows ──────────────────────────────── */
-.contactLink {
-  display: flex;
-  align-items: center;
-  gap: var(--space-xs);
-  font-family: var(--font-body);
-  font-size: 0.83rem;
-  color: var(--color-red);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.contactLink:hover {
-  color: var(--color-red);
-}
-
-.linkIcon {
-  flex-shrink: 0;
-  color: var(--color-red);
-}
-
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 860px) {
-  .columns {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-
   .flyerCol {
-    order: -1; /* flyer on top on mobile */
-    padding-inline: 0;
-  }
-
-  .flyer {
-    margin-top: 0;
-    max-width: 220px;
-  }
-
-  .sideCard {
-    height: auto;
+    padding-inline: var(--space-sm);
   }
 }

@@ -6,7 +6,7 @@
 
 /* ── Footer shell ───────────────────────────────────────────── */
 .footer {
-  background-color: var(--color-white);
+  background-color: var(--color-brown);
   border-top: 1px solid var(--color-border);
   padding-block: var(--space-xl);
 }

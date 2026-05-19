@@ -81,8 +81,7 @@ export default function LegalLayout({ title, lastUpdated, children }: LegalLayou
             <footer className={styles.footer}>
                 <div className={`container ${styles.footerInner}`}>
                     <p className={styles.footerText}>
-                        &copy; {YEAR} sheEXports Initiative. A collaboration between MABA, LSETF, and Lagos State
-                        Ministry of Wealth Creation.
+                        &copy; {YEAR} sheEXports Initiative. A collaboration between MABA, LSETF, and MWC&E.
                     </p>
                     <nav className={styles.footerNav} aria-label="Legal pages">
                         <Link href="/privacy-policy" className={styles.footerLink}>Privacy Policy</Link>

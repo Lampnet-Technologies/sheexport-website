@@ -15,7 +15,7 @@
 import styles from './Partnership.module.css';
 
 /* ── Google Form URL — replace with actual link ────────────── */
-const PARTNER_URL = 'https://forms.gle/fdzk4QXtkTT33PUs8'; // TODO: replace with real URL
+const PARTNER_URL = 'https://forms.gle/fdzk4QXtkTT33PUs8';
 
 export default function Partnership() {
   return (
@@ -31,10 +31,10 @@ export default function Partnership() {
 
         {/* ── Body text ── */}
         <p className={styles.body}>
-          Align your brand with sustainable economic growth. By sponsoring the sheEXports
-          initiative, you directly empower 10,000 women entrepreneurs in Lagos State through
-          targeted technical assistance, digital training, and market-access programs.
-          Make a lasting corporate impact today.
+          Align your brand with sustainable economic growth. By sponsoring the
+          sheEXports initiative, you directly empower 10,000 women entrepreneurs in
+          Lagos State through targeted technical assistance, digital training, and market
+          access programs. Make a lasting corporate impact today.
         </p>
 
         {/* ── CTA button ── */}
@@ -42,7 +42,7 @@ export default function Partnership() {
           href={PARTNER_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className={`btn btn-outline-red ${styles.ctaBtn}`}
+          className={`btn btn-white-red ${styles.ctaBtn}`}
         >
           Become a Partner
         </a>

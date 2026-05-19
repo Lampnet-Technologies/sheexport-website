@@ -69,8 +69,9 @@
 .registerBtn {
   flex-shrink: 0;
   font-size: 0.78rem;
-  padding: 0.55rem 1.25rem;
+  padding: 0.35rem 1.01rem;
   letter-spacing: 0.06em;
+  border-radius: var(--radius-vs);
 }
 
 /* ── Responsive: hide nav text, keep logo + button ─────────── */

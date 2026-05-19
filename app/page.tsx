@@ -11,6 +11,7 @@ import About               from '@/components/About/About';
 import Scope               from '@/components/Scope/Scope';
 import CourseOutline       from '@/components/CourseOutline/CourseOutline';
 import Event               from '@/components/Event/Event';
+import Contact             from '@/components/Contact/Contact';
 import ImplementingPartners from '@/components/ImplementingPartners/ImplementingPartners';
 import Partnership         from '@/components/Partnership/Partnership';
 import Footer              from '@/components/Footer/Footer';
@@ -35,6 +36,9 @@ export default function HomePage() {
 
       {/* ── The Event details ── */}
       <Event />
+
+      {/* ── Contact section ── */}
+      <Contact />
 
       {/* ── Implementing Partners logos ── */}
       <ImplementingPartners />

@@ -85,18 +85,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .image {
-  width: 420px;
-  height: 520px;
+  width: 380px;
+  height: 480px;
   object-fit: cover;
   box-shadow: var(--shadow-card);
-  -webkit-border-radius: 5%;
-  -moz-border-radius: 5%;
-  -ms-border-radius: 5%;
-  -o-border-radius: 5%;
-  border-radius: 5%;
+  display: block;
+}
+
+/* subtle dark overlay over the image */
+.imageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  border-radius: 6px;
 }
 
 /* ── Responsive: stack on mobile ────────────────────────────── */

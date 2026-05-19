@@ -5,46 +5,48 @@
    ============================================================ */
 
 /* ---------- Google Fonts Import ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap");
 
 /* ---------- CSS Custom Properties (Design Tokens) ---------- */
 :root {
   /* Brand Colours */
-  --color-red:        #AB0029;      /* Primary accent – CTA buttons, week badges */
-  --color-yellow:     #F6BD50;      /* Hero background, partnership section */
-  --color-cream:      #FFF8F4;      /* Navbar, About, Course Outline, Partners bg */
-  --color-peach:      #FFF1E6;      /* Scope section, course-outline cards */
-  --color-white:      #FFFFFF;
-  --color-black:      #000000;
-  --color-text-dark:  #1A1A1A;      /* Primary body text */
-  --color-text-mid:   #444444;      /* Secondary body text */
-  --color-text-light: #666666;      /* Tertiary / caption text */
-  --color-border:     #E4BDBD;      /* Subtle borders */
+  --color-red: #ab0029; /* Primary accent – CTA buttons, week badges */
+  --color-yellow: #f6bd50; /* Hero background, partnership section */
+  --color-cream: #fff8f4; /* Navbar, About, Course Outline, Partners bg */
+  --color-peach: #fff1e6; /* Scope section, course-outline cards */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text-dark: #1a1a1a; /* Primary body text */
+  --color-text-mid: #444444; /* Secondary body text */
+  --color-text-light: #666666; /* Tertiary / caption text */
+  --color-border: #e4bdbd; /* Subtle borders */
+  --color-brown: #f1e0d0; /* For potential future use in accents or backgrounds */
 
   /* Typography */
-  --font-body:        'Inter', sans-serif;
-  --font-display:     'Playfair Display', serif;
+  --font-body: "Inter", sans-serif;
+  --font-display: "Playfair Display", serif;
 
   /* Spacing scale */
-  --space-xs:   0.25rem;  /*  4px */
-  --space-sm:   0.5rem;   /*  8px */ 
-  --space-md:   1rem;     /* 16px */
-  --space-lg:   1.5rem;   /* 24px */
-  --space-xl:   2rem;     /* 32px */
-  --space-2xl:  3rem;     /* 48px */
-  --space-3xl:  4rem;     /* 64px */
-  --space-4xl:  6rem;     /* 96px */
+  --space-xs: 0.25rem; /*  4px */
+  --space-sm: 0.5rem; /*  8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+  --space-4xl: 6rem; /* 96px */
 
   /* Border radius */
-  --radius-sm:  4px;
-  --radius-md:  8px;
-  --radius-lg:  12px;
-  --radius-xl:  16px;
+  --radius-vs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-full: 9999px;
 
   /* Shadows */
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.07);
-  --shadow-btn:  0 4px 12px rgba(171, 0, 41, 0.25);
+  --shadow-btn: 0 4px 12px rgba(171, 0, 41, 0.25);
 
   /* Max content width */
   --max-width: 1140px;
@@ -119,12 +121,31 @@ header {
   text-transform: uppercase;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
   text-decoration: none;
 }
 
 .btn:hover {
   transform: translateY(-1px);
+}
+
+.btn-white-red {
+  background-color: var(--color-white);
+  color: var(--color-red);
+  border: none;
+  -webkit-border-radius: var(--radius-vs);
+  -moz-border-radius: var(--radius-vs);
+  -ms-border-radius: var(--radius-vs);
+  -o-border-radius: var(--radius-vs);
+  border-radius: var(--radius-vs);
+}
+
+.btn-white-red:hover {
+  background-color: #f7f0f0;
 }
 
 .btn-red {

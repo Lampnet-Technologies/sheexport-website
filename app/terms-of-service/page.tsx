@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
           By registering for, attending, or participating in any component of the SheExports
           2026 Initiative (&ldquo;the Programme&rdquo;), you agree to be bound by these Terms of Service
           (&ldquo;Terms&rdquo;). The Programme is organised by MABA (Made in Africa Brands Ambassador) in
-          collaboration with the Lagos State Ministry of Wealth Creation and Employment (LSETF).
+          collaboration with the Lagos State Ministry of Wealth Creation and Employment (LSETF), and the Lagos State Ministry of Wealth Creation and Employment (MWC&E).
         </p>
         <p className={styles.body}>
           If you do not agree to these Terms, please do not register for or participate in the
@@ -59,10 +59,13 @@ export default function TermsOfServicePage() {
             Provide accurate and truthful information during the application process
           </li>
           <li className={styles.listItem}>
-            Be available to attend the full 6-week training programme (2 May – 20 June 2026)
+            Be available to attend the full 6-week training programme
           </li>
           <li className={styles.listItem}>
             Agree to participate in programme surveys and impact assessments as requested
+          </li>
+           <li className={styles.listItem}>
+            Agree to attent all sheExport Events/Conferences
           </li>
         </ul>
         <div className={styles.highlight}>
@@ -115,7 +118,7 @@ export default function TermsOfServicePage() {
         <p className={styles.body}>
           All training materials, presentations, toolkits, videos, and other content provided
           through the SheExports Programme (&ldquo;Programme Materials&rdquo;) are the intellectual property
-          of MABA, LSETF, and/or their content partners. Participants are granted a limited,
+          of MABA (Made in Africa Brands Ambassabor), Lagos State Ministry of Wealth Creation and Employment (LSETF), and the Lagos State Ministry of Wealth Creation and Employment (MWC&E) and/or their content partners. Participants are granted a limited,
           non-exclusive, non-transferable licence to use Programme Materials solely for their
           personal business development.
         </p>
@@ -146,8 +149,7 @@ export default function TermsOfServicePage() {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>6. Limitation of Liability</h2>
         <p className={styles.body}>
-          To the fullest extent permitted by Nigerian law, MABA, LSETF, and the Lagos State
-          Ministry of Wealth Creation and Employment shall not be liable for any indirect,
+          To the fullest extent permitted by Nigerian law, MABA (Made in Africa Brands Ambassabor), Lagos State Ministry of Wealth Creation and Employment (LSETF), and the Lagos State Ministry of Wealth Creation and Employment (MWC&E) shall not be liable for any indirect,
           incidental, special, or consequential loss or damage arising from:
         </p>
         <ul className={styles.list}>
@@ -169,7 +171,7 @@ export default function TermsOfServicePage() {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>7. Photography &amp; Media Consent</h2>
         <p className={styles.body}>
-          By participating in Programme events, you grant MABA and LSETF a royalty-free,
+          By participating in Programme events, you grant MABA (Made in Africa Brands Ambassabor), Lagos State Ministry of Wealth Creation and Employment (LSETF), and the Lagos State Ministry of Wealth Creation and Employment (MWC&E) a royalty-free,
           non-exclusive licence to use photographs, videos, and audio recordings taken at
           Programme events for promotional, reporting, and impact documentation purposes.
           If you do not consent to being photographed or recorded, please notify the Programme

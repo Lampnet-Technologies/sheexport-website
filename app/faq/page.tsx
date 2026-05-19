@@ -33,11 +33,11 @@ const FAQ_GROUPS: {
     items: [
       {
         q: 'What is SheExports 2026?',
-        a: 'SheExports 2026 is a flagship initiative co-led by MABA (Made in Africa Brands Ambassador), the Lagos State Ministry of Wealth Creation and Employment, and LSETF. It is designed to empower 10,000 women entrepreneurs in Lagos State over five years (2026–2031) by equipping them with the technical skills, market access, and funding connections needed to grow export-ready businesses.',
+        a: 'SheExports 2026 is a flagship initiative co-led by MABA (Made in Africa Brands Ambassador), the Lagos State Ministry of Wealth Creation and Employment, and the Lagos State Employment Trust Fund (LSETF). It is designed to empower 10,000 women entrepreneurs in Lagos State over five years (2026–2031) by equipping them with the technical skills, market access, and funding connections needed to grow export-ready businesses.',
       },
       {
         q: 'Who is behind SheExports?',
-        a: 'The initiative is driven by MABA in collaboration with the Lagos State Ministry of Wealth Creation and Employment and the Lagos State Employment Trust Fund (LSETF). It is executed through a network of implementing partners spanning government agencies, development finance institutions, and private sector organisations.',
+        a: 'The initiative is driven by MABA in collaboration with the Lagos State Ministry of Wealth Creation and Employment (MWC&E) and the Lagos State Employment Trust Fund (LSETF). It is executed through a network of implementing partners spanning government agencies, development finance institutions, and private sector organisations.',
       },
       {
         q: 'What are the key goals of the programme?',
@@ -54,7 +54,7 @@ const FAQ_GROUPS: {
       },
       {
         q: 'Is there a fee to participate?',
-        a: 'No. The training programme and event are fully funded. There are no fees to register, attend training sessions, or participate in the sheEXports Conference 2026.',
+        a: 'No. The training programme and event are fully funded. There are no fees to register, attend training sessions, or participate in the sheEXports Conference 2026. There are only special fees for exhibition space at the conference, which are waived for training participants.',
       },
       {
         q: 'How do I apply for the training?',
@@ -66,7 +66,7 @@ const FAQ_GROUPS: {
       },
       {
         q: 'Can I register to attend the conference without applying for training?',
-        a: 'Yes. The conference and the training programme are separate. You may attend the conference without enrolling in the 6-week training course, and vice versa.',
+        a: 'Yes. The conference and the training programme are separate. You may attend the conference without enrolling in the training course, and vice versa.',
       },
     ],
   },
@@ -79,7 +79,7 @@ const FAQ_GROUPS: {
       },
       {
         q: 'When does the training start and how long does it run?',
-        a: 'Training runs for 6 weeks from 2nd May to 20th June 2026. Sessions are structured to accommodate working entrepreneurs, with a mix of in-person workshops and online resources.',
+        a: 'Training runs for 6 weeks. Sessions are structured to accommodate working entrepreneurs, with a mix of in-person workshops and online resources.',
       },
       {
         q: 'Will I receive a certificate?',

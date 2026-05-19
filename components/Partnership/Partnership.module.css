@@ -24,7 +24,7 @@
 /* ── "PARTNER OR SPONSOR" label ─────────────────────────────── */
 .label {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -43,7 +43,7 @@
 /* ── Body text ──────────────────────────────────────────────── */
 .body {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: var(--color-text-dark);
   line-height: 1.75;
   max-width: 580px;

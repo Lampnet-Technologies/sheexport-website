@@ -1,0 +1,105 @@
+/*
+ * Contact.module.css
+ * Styles for the "Contact Information" section.
+ *
+ * Section bg: var(--color-peach) #FFF1E6
+ * Card bg:    var(--color-white) with a subtle border and rounded corners
+ * Heading:    var(--color-red) + Playfair Display
+ */
+
+/* ── Section shell ──────────────────────────────────────────── */
+.contact {
+  background-color: var(--color-peach);
+  padding-block: var(--space-2xl);
+}
+
+/* ── White card ─────────────────────────────────────────────── */
+.card {
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl) var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ── Section heading ────────────────────────────────────────── */
+.heading {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-red);
+  text-align: center;
+}
+
+/* ── Two equal columns ──────────────────────────────────────── */
+.columns {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* vertical divider between columns via a pseudo-element on the second col */
+}
+
+/* Left column gets a right border to act as the divider */
+.col:first-child {
+  border-right: 1px solid var(--color-border);
+  padding-right: var(--space-2xl);
+}
+
+.col:last-child {
+  padding-left: var(--space-2xl);
+}
+
+/* ── Column content — centred ───────────────────────────────── */
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+/* ── "For Partnership" / "For Sponsorship" label ────────────── */
+.role {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Email and phone ────────────────────────────────────────── */
+.detail {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text-mid);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.detail:hover {
+  color: var(--color-red);
+}
+
+/* ── Responsive: stack on mobile ────────────────────────────── */
+@media (max-width: 600px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .col:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-right: 0;
+    padding-bottom: var(--space-xl);
+  }
+
+  .col:last-child {
+    padding-left: 0;
+  }
+}

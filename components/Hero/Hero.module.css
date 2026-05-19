@@ -1,110 +1,260 @@
 /*
  * Hero.module.css
- * Styles for the hero banner section.
- * Background: var(--color-yellow) — #F6BD50
+ * Redesigned full-bleed hero matching Frame_4.png.
+ *
+ * Key techniques:
+ *  - position: relative on the section so the Next.js <Image fill> sits inside it
+ *  - A linear-gradient overlay fades left→transparent so left text is readable
+ *    while the right-side portrait photo shows through cleanly
+ *  - All text/buttons are left-aligned, vertically distributed via flex column
  */
 
-/* ── Section shell ──────────────────────────────────────────── */
+/* ── Section shell — explicit height so fill image has a container ── */
 .hero {
-  background-color: var(--color-yellow);
-  padding-block: var(--space-3xl) var(--space-4xl);
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* full viewport height like the design */
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
 }
 
-/* ── Centred content column ─────────────────────────────────── */
-.inner {
+.hero :global(.container) {
+  padding-inline: var(--space-xs);
+}
+
+/* ── Background photo (Next.js Image fill) ──────────────────── */
+.bgImage {
+  object-fit: cover;
+  object-position: center right; /* keep the woman in frame on all sizes */
+  z-index: 0;
+}
+
+/* ── Gradient overlay — left dark, fades to transparent ─────── */
+/* .overlay {
+  position: absolute;
+  inset: 0;
+  ------ strong dark band on the left where text lives, transparent on the right ------
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.55) 35%,
+    rgba(0, 0, 0, 0.15) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+} */
+
+/* ── Foreground content column ──────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 1; /* above the overlay */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-md);
+  justify-content: flex-start;
+  align-items: flex-start; /* left-aligned, matching the design */
+  gap: var(--space-xl);
+  padding-block: var(--space-3xl);
+  text-align: left;
+  /* constrain width for better readability on large screens, but full width on mobile for max impact */
+  max-width: 100%;
+  margin-left: 30px; /* slight left offset so text isn't flush against the edge */
+  margin-right: 30px;
 }
 
-/* ── Top partner logos ──────────────────────────────────────── */
-.topLogos {
+/* ── SheExports logo block ───────────────────────────────────── */
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+}
+
+.logoWrap {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-xl);
-  flex-wrap: wrap;
-  margin-bottom: var(--space-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.topLogo {
+.logo {
   object-fit: contain;
-  height: 40px;
-  width: auto;
+  width: 90px;
+  height: 90px;
 }
 
-/* ── "INVITES YOU TO" label ─────────────────────────────────── */
-.invites {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
+.logoLabel {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-text-dark);
+  color: var(--color-black);
+  letter-spacing: 0.02em;
 }
 
-/* ── Main heading ───────────────────────────────────────────── */
+/* ── "In Partnership with" block ────────────────────────────── */
+.partnerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.partnerLabel {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.partnerLogos {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* White card behind each partner logo */
+.partnerCard {
+  background-color: var(--color-white);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 90px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.partnerLogo {
+  object-fit: contain;
+  height: 80px;
+  width: auto;
+  max-width: 110px;
+}
+
+/* ── Heading block ───────────────────────────────────────────── */
+.headingBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* Giant bold heading — matches the massive all-caps type in the design */
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
-  color: var(--color-text-dark);
-  line-height: 1.1;
-  margin-block: var(--space-xs);
-}
-
-/* ── "THEME" badge ──────────────────────────────────────────── */
-.themeBadge {
-  display: inline-block;
-  background-color: var(--color-red);
-  color: var(--color-white);
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: clamp(1.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: var(--color-black);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  padding: 0.3rem 1.2rem;
-  border-radius: var(--radius-sm);
-  margin-block: var(--space-xs);
+  /* subtle text shadow for legibility over the photo */
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* ── Tagline ────────────────────────────────────────────────── */
+/* Tagline beneath the heading */
 .tagline {
-  font-family: var(--font-body);
-  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.55rem);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-text-dark);
-  line-height: 1.5;
-  max-width: 640px;
-  margin-block: var(--space-sm);
+  color: var(--color-black);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* ── CTA button group ───────────────────────────────────────── */
+/* ── CTA button group ────────────────────────────────────────── */
 .ctaGroup {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--space-md);
   flex-wrap: wrap;
   margin-top: var(--space-sm);
 }
 
-.ctaBtn {
-  min-width: 170px;
+/* Shared button base */
+.btnFilled,
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+  white-space: nowrap;
 }
 
-/* ── Responsive ─────────────────────────────────────────────── */
-@media (max-width: 480px) {
+.btnFilled:hover,
+.btnOutline:hover {
+  transform: translateY(-2px);
+}
+
+/* Solid red fill */
+.btnFilled {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border: 2px solid var(--color-red);
+}
+
+.btnFilled:hover {
+  background-color: #8e0022;
+  border-color: #8e0022;
+}
+
+/* Outlined red on transparent */
+.btnOutline {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-red);
+}
+
+.btnOutline:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  /* On mobile the overlay covers more of the screen for readability */
+  .overlay {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.65) 60%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+
+  .content {
+    max-width: 100%;
+    gap: var(--space-lg);
+  }
+
   .ctaGroup {
     flex-direction: column;
+    align-items: flex-start;
     width: 100%;
   }
 
-  .ctaBtn {
+  .btnFilled,
+  .btnOutline {
     width: 100%;
+    justify-content: center;
   }
 }
