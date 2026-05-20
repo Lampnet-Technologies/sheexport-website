@@ -36,7 +36,7 @@
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--color-text-mid);
-  text-decoration: none;
+  text-decoration: underline var(--color-yellow) 1px;
   transition: color 0.2s ease;
 }
 

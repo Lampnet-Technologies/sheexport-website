@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* ── Copyright ── */}
         <p className={styles.copyright}>
-          &copy; {YEAR} sheEXports Initiative. A collaboration between Made in Africa Brands Ambassabor, Lagos State Employment Trust Fund, and Lagos State Ministry of Wealth Creation and Employment.
+          &copy; {YEAR} sheEXports Initiative. A collaboration between MABA, Lagos State Employment Trust Fund (LSETF), and Lagos State Ministry of Wealth Creation and Employment (MWC&E)
         </p>
 
       </div>

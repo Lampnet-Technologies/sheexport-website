@@ -1,16 +1,17 @@
 /**
  * Hero.tsx
  *
- * Redesigned full-bleed hero section matching Frame_4.png.
+ * Full-bleed hero adjusted to match hero.PNG.
  *
- * Layout (left-aligned overlay on a full-width background image):
- *  - heroImage.png as the background (object-fit: cover, full viewport height)
- *  - Dark gradient overlay on the left so text stays readable
- *  - Top-left: SheExports logo circle + "SheExports" label beneath it
- *  - Below logo: "In Partnership with" label + two partner logo cards
- *  - Lower-left: Giant bold uppercase "SHEEXPORTS" heading
- *  - Sub-tagline: "PRODUCE. ADD VALUE. EXPORT"
- *  - CTA row: filled red "REGISTER TO ATTEND" + outlined red "APPLY FOR TRAINING"
+ * Structure:
+ *  - heroImage.png fills the full section (object-position: center right
+ *    keeps the woman portrait visible on the right)
+ *  - Subtle gradient overlay (light at top, slightly darker bottom-left)
+ *  - Content column split into two logical groups via justify-content: space-between:
+ *      TOP:    logoBlock + partnerBlock
+ *      BOTTOM: headingBlock + ctaGroup (buttons in a frosted panel)
+ *  - All logos are transparent PNGs — no background colour on any wrapper
+ *  - "SheExports" text label restored beneath the main logo
  */
 
 import Image from 'next/image';
@@ -34,79 +35,89 @@ export default function Hero() {
         sizes="100vw"
       />
 
-      {/* ── Left-side gradient overlay for text legibility ── */}
+      {/* ── Gradient overlay for readability ── */}
       <div className={styles.overlay} aria-hidden="true" />
 
-      {/* ── All foreground content ── */}
-      <div className={`container ${styles.content}`}>
+      {/* ── Foreground content ── */}
+      <div className={styles.content}>
 
-        {/* ── SheExports logo + name ── */}
-        <div className={styles.logoBlock}>
-          <div className={styles.logoWrap}>
-            <Image
-              src="/images/logo.png"
-              alt="SheExports logo"
-              width={80}
-              height={80}
-              className={styles.logo}
-              priority
-            />
-          </div>
-         {/*  <span className={styles.logoLabel}>SheExports</span> */}
-        </div>
+        {/* ════ TOP: logo + partner logos ════ */}
+        <div className={styles.topBlock}>
 
-        {/* ── "In Partnership with" + partner logos ── */}
-        <div className={styles.partnerBlock}>
-          <p className={styles.partnerLabel}>In Partnership with</p>
-          <div className={styles.partnerLogos}>
-            <div className={styles.partnerCard}>
+          {/* SheExports logo + label */}
+          <div className={styles.logoBlock}>
+            <div className={styles.logoWrap}>
               <Image
-                src="/images/logo-lagos.png"
-                alt="Lagos State Ministry of Wealth Creation and Employment"
+                src="/images/logo.png"
+                alt="SheExports logo"
                 width={72}
-                height={44}
-                className={styles.partnerLogo}
+                height={72}
+                className={styles.logo}
+                priority
               />
             </div>
-            <div className={styles.partnerCard}>
-              <Image
-                src="/images/logo-lsetf.png"
-                alt="LSETF – Lagos State Employment Trust Fund"
-                width={100}
-                height={44}
-                className={styles.partnerLogo}
-              />
+            <span className={styles.logoLabel}>SheExports</span>
+          </div>
+
+          {/* "In Partnership with" + two partner logos */}
+          <div className={styles.partnerBlock}>
+            <p className={styles.partnerLabel}>In Partnership with</p>
+            <div className={styles.partnerLogos}>
+              <div className={styles.partnerCard}>
+                <Image
+                  src="/images/logo-lagos.png"
+                  alt="Lagos State Ministry of Wealth Creation and Employment"
+                  width={90}
+                  height={46}
+                  className={styles.partnerLogo}
+                />
+              </div>
+              <div className={styles.partnerCard}>
+                <Image
+                  src="/images/logo-lsetf.png"
+                  alt="LSETF – Lagos State Employment Trust Fund"
+                  width={110}
+                  height={46}
+                  className={styles.partnerLogo}
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* ── Main heading ── */}
-        <div className={styles.headingBlock}>
-          <h1 className={styles.heading}>SHEEXPORTS</h1>
-          <p className={styles.tagline}>PRODUCE. ADD VALUE. EXPORT</p>
-        </div>
+        </div>{/* end topBlock */}
 
-        {/* ── CTA buttons ── */}
-        <div className={styles.ctaGroup}>
-          <a
-            href={REGISTER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.btnFilled}
-          >
-            REGISTER TO ATTEND
-          </a>
-          <a
-            href={APPLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.btnOutline}
-          >
-            APPLY FOR TRAINING
-          </a>
-        </div>
+        {/* ════ BOTTOM: heading + CTA buttons ════ */}
+        <div className={styles.bottomBlock}>
 
-      </div>
+          {/* Heading + tagline */}
+          <div className={styles.headingBlock}>
+            <h1 className={styles.heading}>SHEEXPORTS</h1>
+            <p className={styles.tagline}>PRODUCE. ADD VALUE. EXPORT</p>
+          </div>
+
+          {/* Buttons in frosted panel */}
+          <div className={styles.ctaGroup}>
+            <a
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnFilled}
+            >
+              REGISTER TO ATTEND
+            </a>
+            <a
+              href={APPLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnOutline}
+            >
+              APPLY FOR TRAINING
+            </a>
+          </div>
+
+        </div>{/* end bottomBlock */}
+
+      </div>{/* end content */}
     </section>
   );
 }

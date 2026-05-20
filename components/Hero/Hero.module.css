@@ -1,199 +1,215 @@
 /*
  * Hero.module.css
- * Redesigned full-bleed hero matching Frame_4.png.
+ * Adjusted to match hero.PNG exactly.
  *
- * Key techniques:
- *  - position: relative on the section so the Next.js <Image fill> sits inside it
- *  - A linear-gradient overlay fades left→transparent so left text is readable
- *    while the right-side portrait photo shows through cleanly
- *  - All text/buttons are left-aligned, vertically distributed via flex column
+ * Structure:
+ *  - Full-viewport background image, content-right portrait
+ *  - Subtle gradient overlay (lighter at top where logo/partners live,
+ *    slightly darker at bottom-left where the big heading + buttons sit)
+ *  - Content column: flex column, space-between — logo top, heading + buttons bottom
+ *  - No background on any logo or partner card (transparent images)
+ *  - Buttons sit in a frosted/white-tinted panel
  */
 
-/* ── Section shell — explicit height so fill image has a container ── */
+/* ── Section shell ───────────────────────────────────────────── */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh; /* full viewport height like the design */
+  min-height: 100vh;
   display: flex;
   align-items: stretch;
   overflow: hidden;
 }
 
-.hero :global(.container) {
-  padding-inline: var(--space-xs);
-}
-
-/* ── Background photo (Next.js Image fill) ──────────────────── */
+/* ── Background photo ────────────────────────────────────────── */
 .bgImage {
   object-fit: cover;
-  object-position: center right; /* keep the woman in frame on all sizes */
+  object-position: center right;
   z-index: 0;
 }
 
-/* ── Gradient overlay — left dark, fades to transparent ─────── */
-/* .overlay {
+/* ── Gradient overlay ────────────────────────────────────────── */
+/*
+ * Very light at the top (so logo + partner logos read on the bright sky)
+ * Slightly darker at the bottom-left (so white heading text reads on the port)
+ * Leaves the right half clear so the woman photo is unobstructed
+ */
+.overlay {
   position: absolute;
   inset: 0;
-  ------ strong dark band on the left where text lives, transparent on the right ------
   background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.72) 0%,
-    rgba(0, 0, 0, 0.55) 35%,
-    rgba(0, 0, 0, 0.15) 65%,
-    rgba(0, 0, 0, 0) 100%
+    to bottom,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.32) 75%,
+    rgba(0, 0, 0, 0.45) 100%
   );
   z-index: 1;
-} */
-
-/* ── Foreground content column ──────────────────────────────── */
-.content {
-  position: relative;
-  z-index: 1; /* above the overlay */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start; /* left-aligned, matching the design */
-  gap: var(--space-xl);
-  padding-block: var(--space-3xl);
-  text-align: left;
-  /* constrain width for better readability on large screens, but full width on mobile for max impact */
-  max-width: 100%;
-  margin-left: 30px; /* slight left offset so text isn't flush against the edge */
-  margin-right: 30px;
 }
 
-/* ── SheExports logo block ───────────────────────────────────── */
+/* ── Foreground content ──────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  /* push logo to top, heading+buttons to bottom */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-block: 2.5rem 3rem;
+  padding-inline: 3rem;
+  /* occupy only the left ~50% so the portrait shows on the right */
+  max-width: 52%;
+  min-height: 100vh;
+}
+
+/* ── Top block: logo + partners ──────────────────────────────── */
+.topBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── SheExports logo ─────────────────────────────────────────── */
 .logoBlock {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-xs);
+  gap: 0.3rem;
 }
 
+/* No background — transparent image sits directly on the photo */
 .logoWrap {
-  width: 90px;
-  height: 90px;
-  overflow: hidden;
-  background-color: var(--color-white);
+  width: 72px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
   object-fit: contain;
-  width: 90px;
-  height: 90px;
+  width: 72px;
+  height: 72px;
 }
 
 .logoLabel {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 600;
-  color: var(--color-black);
-  letter-spacing: 0.02em;
+  /* dark text — sits on bright sky area */
+  color: var(--color-text-dark);
+  letter-spacing: 0.01em;
 }
 
-/* ── "In Partnership with" block ────────────────────────────── */
+/* ── Partner block ───────────────────────────────────────────── */
 .partnerBlock {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.6rem;
 }
 
 .partnerLabel {
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 1.32rem;
   font-weight: 700;
-  color: var(--color-white);
+  /* dark — upper section of hero is bright enough */
+  color: var(--color-text-dark);
 }
 
 .partnerLogos {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 1.75rem;
 }
 
-/* White card behind each partner logo */
+/* Transparent card — just sizing, no background */
 .partnerCard {
-  background-color: var(--color-white);
-  padding: var(--space-sm) var(--space-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 100px;
-  height: 90px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  height: 52px;
 }
 
 .partnerLogo {
   object-fit: contain;
-  height: 80px;
+  height: 66px;
   width: auto;
-  max-width: 110px;
+  max-width: 150px;
 }
 
-/* ── Heading block ───────────────────────────────────────────── */
+/* ── Bottom block: heading + buttons ─────────────────────────── */
+.bottomBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.0rem;
+}
+
+/* ── Heading ─────────────────────────────────────────────────── */
 .headingBlock {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.4rem;
 }
 
-/* Giant bold heading — matches the massive all-caps type in the design */
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
   font-weight: 900;
   color: var(--color-white);
-  line-height: 0.95;
+  line-height: 0.92;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  /* subtle text shadow for legibility over the photo */
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* Tagline beneath the heading */
 .tagline {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 3vw, 1.55rem);
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 1.4vw, 1rem);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-white);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
 }
 
-/* ── CTA button group ────────────────────────────────────────── */
+/* ── CTA buttons ─────────────────────────────────────────────── */
+/*
+ * Buttons sit on a very subtle white-tinted panel (matches the
+ * slightly lighter rectangle visible in the screenshot behind the buttons)
+ */
 .ctaGroup {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-top: var(--space-sm);
+  background-color: rgba(255, 255, 255, 0.855);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
 }
 
-/* Shared button base */
+/* Shared base */
 .btnFilled,
 .btnOutline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.75rem;
+  padding: 0.65rem 1.5rem;
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
   border-radius: var(--radius-sm);
   text-decoration: none;
+  white-space: nowrap;
   transition:
     background-color 0.2s ease,
     color 0.2s ease,
     transform 0.15s ease;
-  white-space: nowrap;
 }
 
 .btnFilled:hover,
@@ -201,60 +217,92 @@
   transform: translateY(-2px);
 }
 
-/* Solid red fill */
 .btnFilled {
   background-color: var(--color-red);
   color: var(--color-white);
   border: 2px solid var(--color-red);
 }
-
 .btnFilled:hover {
   background-color: #8e0022;
   border-color: #8e0022;
 }
 
-/* Outlined red on transparent */
 .btnOutline {
   background-color: transparent;
-  color: var(--color-white);
+  color: var(--color-red);
   border: 2px solid var(--color-red);
 }
-
 .btnOutline:hover {
   background-color: var(--color-red);
   color: var(--color-white);
 }
 
-/* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 768px) {
+/* ── Responsive — Tablet ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .content {
+    max-width: 65%;
+    padding-inline: 2rem;
+  }
+}
+
+/* ── Responsive — Mobile ─────────────────────────────────────── */
+@media (max-width: 640px) {
   .hero {
     min-height: 100svh;
   }
 
-  /* On mobile the overlay covers more of the screen for readability */
-  .overlay {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.8) 0%,
-      rgba(0, 0, 0, 0.65) 60%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-  }
-
   .content {
     max-width: 100%;
-    gap: var(--space-lg);
+    padding-inline: 1.25rem;
+    padding-block: 1.75rem 2rem;
+    min-height: 100svh;
   }
 
+  /* Smaller logo on mobile */
+  .logoWrap {
+    width: 52px;
+    height: 52px;
+  }
+  .logo {
+    width: 52px;
+    height: 52px;
+  }
+  .logoLabel {
+    font-size: 0.78rem;
+  }
+
+  /* Smaller partner logos */
+  .partnerCard {
+    height: 38px;
+  }
+  .partnerLogo {
+    height: 34px;
+    max-width: 80px;
+  }
+  .partnerLabel {
+    font-size: 0.8rem;
+  }
+
+  /* Tighter heading */
+  .heading {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+  .tagline {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Buttons stack, slightly smaller */
   .ctaGroup {
     flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0.75rem;
   }
-
   .btnFilled,
   .btnOutline {
-    width: 100%;
-    justify-content: center;
+    font-size: 0.68rem;
+    padding: 0.6rem 1rem;
+    text-align: center;
   }
 }
