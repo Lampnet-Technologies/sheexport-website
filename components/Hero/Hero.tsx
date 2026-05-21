@@ -56,30 +56,37 @@ export default function Hero() {
                 priority
               />
             </div>
-            <span className={styles.logoLabel}>SheExports</span>
+            <span className={styles.logoLabel}>SheEXports</span>
           </div>
 
           {/* "In Partnership with" + two partner logos */}
           <div className={styles.partnerBlock}>
             <p className={styles.partnerLabel}>In Partnership with</p>
             <div className={styles.partnerLogos}>
-              <div className={styles.partnerCard}>
-                <Image
-                  src="/images/logo-lagos.png"
-                  alt="Lagos State Ministry of Wealth Creation and Employment"
-                  width={90}
-                  height={46}
-                  className={styles.partnerLogo}
-                />
+              <div className={styles.logoBlock}>
+                <div className={styles.partnerCard}>
+                  <Image
+                    src="/images/logo-lagos.png"
+                    alt="Lagos State Ministry of Wealth Creation and Employment"
+                    width={90}
+                    height={46}
+                    className={styles.partnerLogo}
+                  />
+                </div>
+                <span className={styles.logoLabel}>MWC&E</span>
               </div>
-              <div className={styles.partnerCard}>
-                <Image
-                  src="/images/logo-lsetf.png"
-                  alt="LSETF – Lagos State Employment Trust Fund"
-                  width={110}
-                  height={46}
-                  className={styles.partnerLogo}
-                />
+
+              <div className={styles.logoBlock}>
+                <div className={styles.partnerCard}>
+                  <Image
+                    src="/images/logo-lsetf.png"
+                    alt="LSETF – Lagos State Employment Trust Fund"
+                    width={110}
+                    height={46}
+                    className={styles.partnerLogo}
+                  />
+                </div>
+                <span className={styles.logoLabel}>LSETF</span>
               </div>
             </div>
           </div>
@@ -91,7 +98,7 @@ export default function Hero() {
 
           {/* Heading + tagline */}
           <div className={styles.headingBlock}>
-            <h1 className={styles.heading}>SHEEXPORTS</h1>
+            <h1 className={styles.heading}>SheEXports</h1>
             <p className={styles.tagline}>PRODUCE. ADD VALUE. EXPORT</p>
           </div>
 

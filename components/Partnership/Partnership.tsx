@@ -31,8 +31,8 @@ export default function Partnership() {
 
         {/* ── Body text ── */}
         <p className={styles.body}>
-          Align your brand with sustainable economic growth. By sponsoring the
-          sheEXports initiative, you directly empower 10,000 women entrepreneurs in
+          Align your brand with sustainable economic growth by sponsoring the
+          sheEXports initiative, you directly empower 10,000+ women entrepreneurs in
           Lagos State through targeted technical assistance, digital training, and market
           access programs. Make a lasting corporate impact today.
         </p>
