@@ -117,7 +117,7 @@
 
 .partnerLabel {
   font-family: var(--font-display);
-  font-size: 4.32rem;
+  font-size: 1.32rem;
   font-weight: 700;
   /* dark — upper section of hero is bright enough */
   color: var(--color-text-dark);

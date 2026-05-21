@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* ── Logo ── */}
         <Link href="/" className={styles.logoLink} aria-label="SheExports home">
           <Image
-            src="/images/logo2.png"
+            src="/images/logo.png"
             alt="SheExports logo"
             width={80}
             height={40}
