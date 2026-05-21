@@ -71,10 +71,16 @@
 }
 
 /* ── SheExports logo ─────────────────────────────────────────── */
-.logoBlock {
+.logoBlock1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0.3rem;
+}
+.logoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.3rem;
 }
 
@@ -100,9 +106,6 @@
   /* dark text — sits on bright sky area */
   color: var(--color-text-dark);
   letter-spacing: 0.01em;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 /* ── Partner block ───────────────────────────────────────────── */
@@ -114,11 +117,12 @@
 
 .partnerLabel {
   font-family: var(--font-display);
-  font-size: 1.32rem;
+  font-size: 4.32rem;
   font-weight: 700;
   /* dark — upper section of hero is bright enough */
   color: var(--color-text-dark);
   letter-spacing: 0.05em;
+  /* padding-left: 2.25rem; */
 }
 
 .partnerLogos {
@@ -250,6 +254,7 @@
     padding-inline: 2rem;
     padding-block: 7.75rem 2rem;
     min-height: 100svh;
+    gap: 5.55rem;
   }
 
   /* Buttons stack, slightly smaller */
@@ -274,6 +279,7 @@
     padding-inline: 2rem;
     padding-block: 7.75rem 2rem;
     min-height: 100svh;
+    gap: 8.55rem;
   }
 
   /* Buttons stack, slightly smaller */
@@ -288,6 +294,18 @@
     font-size: 0.68rem;
     padding: 0.6rem 1rem;
     text-align: center;
+  }
+
+  /* Smaller partner logos */
+  .partnerCard {
+    height: 54px;
+  }
+  .partnerLogo {
+    height: 100px;
+    max-width: 100px;
+  }
+  .partnerLabel {
+    font-size: 0.86rem;
   }
 }
 
@@ -315,15 +333,19 @@
   }
   .logoLabel {
     font-size: 0.82rem;
+    color: var(--color-white);
+  }
+  .partnerLabel {
+    color: var(--color-white);
   }
 
   /* Smaller partner logos */
   .partnerCard {
-    height: 44px;
+    height: 54px;
   }
   .partnerLogo {
-    height: 42px;
-    max-width: 96px;
+    height: 100px;
+    max-width: 100px;
   }
   .partnerLabel {
     font-size: 0.86rem;

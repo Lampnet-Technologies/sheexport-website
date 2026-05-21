@@ -45,7 +45,7 @@ export default function Hero() {
         <div className={styles.topBlock}>
 
           {/* SheExports logo + label */}
-          <div className={styles.logoBlock}>
+          <div className={styles.logoBlock1}>
             <div className={styles.logoWrap}>
               <Image
                 src="/images/logo.png"
