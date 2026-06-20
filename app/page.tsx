@@ -11,10 +11,12 @@ import About               from '@/components/About/About';
 import Scope               from '@/components/Scope/Scope';
 import CourseOutline       from '@/components/CourseOutline/CourseOutline';
 import Event               from '@/components/Event/Event';
+import Exhibit             from '@/components/Exhibit/Exhibit';
 import Contact             from '@/components/Contact/Contact';
 import ImplementingPartners from '@/components/ImplementingPartners/ImplementingPartners';
 import Partnership         from '@/components/Partnership/Partnership';
 import Footer              from '@/components/Footer/Footer';
+import FadeIn              from '@/components/FadeIn/FadeIn';
 
 export default function HomePage() {
   return (
@@ -23,31 +25,53 @@ export default function HomePage() {
       <Navbar />
 
       {/* ── Hero / banner section ── */}
-      <Hero />
+      <FadeIn delay={150}>
+        <Hero />
+      </FadeIn>
 
       {/* ── About the programme ── */}
-      <About />
+      <FadeIn>
+        <About />
+      </FadeIn>
 
       {/* ── Scope of Work & Project Components ── */}
-      <Scope />
+      <FadeIn>
+        <Scope />
+      </FadeIn>
 
       {/* ── Course Outline ── */}
-      <CourseOutline />
+      <FadeIn>
+        <CourseOutline />
+      </FadeIn>
 
       {/* ── The Event details ── */}
-      <Event />
+      <FadeIn>
+        <Event />
+      </FadeIn>
+
+      {/* ── Exhibit Section ── */}
+      <FadeIn>
+        <Exhibit />
+      </FadeIn>
 
       {/* ── Contact section ── */}
-      <Contact />
+      <FadeIn>
+        <Contact />
+      </FadeIn>
 
       {/* ── Implementing Partners logos ── */}
-      <ImplementingPartners />
+      <FadeIn>
+        <ImplementingPartners />
+      </FadeIn>
 
       {/* ── Join Our Mission / Partnership CTA ── */}
-      <Partnership />
+      <FadeIn>
+        <Partnership />
+      </FadeIn>
 
       {/* ── Page footer ── */}
       <Footer />
     </main>
   );
 }
+

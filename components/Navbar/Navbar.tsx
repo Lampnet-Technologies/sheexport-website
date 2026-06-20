@@ -24,10 +24,11 @@ const REGISTER_URL = 'https://forms.gle/HoAnsNEDqDVDZyiw9'; // TODO: replace wit
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Training', href: '#training' },
+  { label: 'Event', href: '#event' },
+  { label: 'Exhibit', href: '#exhibit' },
   { label: 'Implementation Partners', href: '#partners' },
   { label: 'Partner/Sponsor', href: '#partner-sponsor' },
-  { label: 'Event', href: '#event' },
-  { label: 'Contact Us', href: '#contact' }, // replaced in Footer, kept for nav
+  { label: 'Contact Us', href: '#contact' },
 ];
 
 export default function Navbar() {

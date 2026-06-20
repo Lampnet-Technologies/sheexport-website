@@ -1,0 +1,28 @@
+/*
+ * FadeIn.module.css
+ * High-performance, GPU-accelerated scroll animations.
+ */
+
+.fadeIn {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: 
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fallback for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fadeIn {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+}
