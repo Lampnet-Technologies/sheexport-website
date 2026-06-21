@@ -20,6 +20,7 @@ import styles from './Hero.module.css';
 /* ── Google Form URLs ───────────────────────────────────────── */
 const REGISTER_URL = 'https://forms.gle/HoAnsNEDqDVDZyiw9';
 const APPLY_URL = 'https://forms.gle/4bk89JwzHbHSpuKS8';
+const EXHIBIT_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfxN6RFNge7baQ1Ov6mz-Cbau9h-6EQ8M-J-BBr1-R-q8um_Q/viewform?usp=publish-editor';
 
 export default function Hero() {
   return (
@@ -119,6 +120,14 @@ export default function Hero() {
               className={styles.btnOutline}
             >
               APPLY FOR TRAINING
+            </a>
+            <a
+              href={EXHIBIT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnOutline}
+            >
+              REGISTER TO EXHIBIT
             </a>
           </div>
 
